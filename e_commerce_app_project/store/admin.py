@@ -1,13 +1,13 @@
-from math import prod
 from django.contrib import admin
 from .models import Product, Collection, Promotion, Customer, Order, OrderItem, Address, Cart, CartItem
-from django.contrib.contenttypes.admin import GenericTabularInline
+
 
 # Register your models here.
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+
     actions = ["clear_inventory"]
     list_display = ["title", "unit_price", "collection_title", "stock_status"]
     list_filter = ["collection", "last_update"]
