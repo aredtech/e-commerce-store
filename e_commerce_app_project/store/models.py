@@ -12,7 +12,7 @@ class Product(models.Model):
     stock = models.IntegerField(validators=[MinValueValidator(1)])
     slug = models.SlugField()
     last_update = models.DateTimeField(auto_now=True)
-    collection = models.ForeignKey("Collection", on_delete=models.PROTECT)
+    collection = models.ForeignKey("Collection", on_delete=models.PROTECT, related_name="products")
     promotions = models.ManyToManyField("Promotion", blank=True)
 
     def __str__(self):

@@ -7,6 +7,17 @@
     <title>Store</title>
 </head>
 <body>
-    <h1>Home Page</h1>
+    <div>
+        <h1>Home Page</h1>
+    </div>
+    <div>
+        <ul>
+            {% for product in products %}
+            
+            <li>{{product.title}}</li>
+            
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
